@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentee-Dashboard</title>
+    <link rel="stylesheet" href="mentee.css">
+</head>
+<body>
+    <div class="container">
+        <div class="mentor-info">
+            <div class="mentor-picture"></div>
+    
+            <div id="mentee-details">
+                <p>Name</p>
+                <p>Designation</p>
+                <p>Department</p>
+                <p>Experience</p>
+                <p>Mentoring</p>
+                <p>Contact</p>
+            </div>
+        </div>
+    
+        <div id="mentee-section">
+            <div class="mentee-action">
+                <div class="btn-container">
+                    <button>Pending</button>
+                    <button>Resolved</button>
+                    <button id="doubt-btn">New Querry</button>
+                </div>
+                <div id="msg-container" class="msg-container">
+                    <textarea name="msg-text" id="msg-input" class="msg-input" placeholder="Start a chat"></textarea>
+                    <a onclick="sendMsg()" id="send-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                            <path d="M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div id="history">
+                <ol id="history-list">
+                    <li>
+                        Regarding overload of tasks in...
+                    </li>
+                    <li>
+                        Regarding overload of tasks in...
+                    </li>
+                    <li>
+                        Regarding overload of tasks in...
+                    </li>
+                </ol>
+            </div>
+
+        </div>
+    </div>
+
+    <dialog id="doubt-dialog">
+        <div id="main">
+            <Form id="doubt-form">
+                <label for="heading">Subject </label><br>
+                <input type="text" id="heading" name="heading" required><br>
+                <label for="body">Doubt </label><br>
+                <textarea type="text" class="msg-input" id="body" name="body" required></textarea>
+        
+                <div class="btn-section">
+                    <button id="cancel-btn">cancel</button>
+                    <button id="submit-btn" type="submit"> submit</button>
+                </div>
+            </Form>
+        </div>
+    </dialog>
+
+<!-- <script>
+    const doubtUrl = xx;
+    const submitBtn = document.getElementById("submit-btn");
+    const cancelBtn = document.getElementById("cancel-btn");
+
+    const form = document.getElementById("doubt-form");
+
+    submitBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const newDoubt = new FormData(form);
+        jsonData = {};
+        newMenteeDetails.forEach((value, key) => {
+            jsonData[key] = value;
+        });
+
+        // jsonData.year = `${jsonData.year}`;
+        console.log(jsonData)
+
+        /*fetch(addMenteeUrl, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${JSON.parse(localStorage.getItem("mentorObject")).token}`
+            },
+            body: JSON.stringify(jsonData)
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("Cannot add this mentee!, server error");
+                }
+                console.log("New mentee added successfully.")
+                return response.json();
+            })
+            .then((result) => {
+                console.log(result);
+                window.location.href = "mentor.html"
+            })
+            .catch((error) => {
+                console.log("Some error occured!", error);
+            })
+            */
+    })
+</script> -->
+    <script src="mentee.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor-Registeration</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div id="main">
+        <Form id="registeration_form">
+            <label for="fname">First Name </label>
+            <input type="text" id="fname" name="fname" required><br>
+            <label for="lname">Last Name </label>
+            <input type="text" id="lname" name="lname"><br>
+            <label for="email">Email </label>
+            <input type="email" id="email" name="email" required><br>
+            <label for="phone">Phone </label>
+            <input type="tel" id="phone" name="phone" maxlength="10" required><br>
+            <label for="password">Password </label>
+            <input type="text" id="password" name="password" required><br>
+            
+            <div class="btn-section">
+                <input id="submit-btn" type="submit" value="Submit"><br>
+            </div>
+        </Form>
+    </div>
+
+    <script>
+        const mentorSignupUrl = 'https://mentor-mentee-gold.vercel.app/mentor/signup';
+        const submitBtn = document.getElementById("submit-btn");
+        const form = document.getElementById("registeration_form");
+
+        submitBtn.addEventListener('click', (e)=>{
+            e.preventDefault();
+
+            const mentorDetails = new FormData(form);
+            jsonData = {};
+            mentorDetails.forEach((value, key) =>{
+                jsonData[key] = value;
+            });
+            jsonData.name = `${jsonData.fname} ${jsonData.lname}`;
+            jsonData.experience = "3 Years";
+            delete jsonData.fname;
+            delete jsonData.lname;
+            console.log(jsonData)
+
+            fetch(mentorSignupUrl, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(jsonData)
+            })
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error("Login Failed!");
+                    }
+                    console.log("Sign up successfully.")
+                    return response.json();
+                })
+                .then((result) => {
+                    console.log(result);
+                })
+                .catch((error) => {
+                    console.log("Some error occured!", error);
+                })
+
+
+        })
+    </script>
+</body>
+</html>

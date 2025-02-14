@@ -1,0 +1,191 @@
+:root {
+    --main-clr: #11121a;
+    --border-clr: #42434a;
+    --text-clr: #e6e6ef;
+    --accent-clr: #5e63ff;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+body{
+    position: relative;
+    min-height: 90vh;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--main-clr);
+    color: var(--text-clr);
+}
+
+.mentor-info {
+    margin-top: 5vh;
+    padding: 5% 6% 2%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1ch;
+    width: 90%;
+    max-width: 1036px;
+    margin-bottom: min(20px, 2%);
+    background-color: var(--main-clr);
+    border: 1px solid var(--border-clr);
+    border-radius: 12px;
+
+
+    #mentor-details {
+        display: flex;
+        flex-direction: column;
+        margin-left: 2%;
+        justify-content: center;
+
+        p {
+            padding: 1px;
+            font-size: 1.1em;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+    }
+
+    .mentor-picture {
+        margin-left: 4px;
+        width: 120px;
+        height: 150px;
+        background-image: url("../media/mentor.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: #5e63ff;
+        border: 1px solid #fff;
+        border-radius: 8px;
+        flex-basis: 1;
+    }
+
+    #btns{
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+
+        button {
+                text-wrap: nowrap;
+                background: transparent;
+                border: 1px solid var(--border-clr);
+                border-radius: 8px;
+                padding: min(10px, 20px) 1vh;
+                width: fit-content;
+                height: fit-content;
+                color: #fff;
+            }
+    }
+}
+
+
+#mentee-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 92%;
+    max-width: 1064px;
+}
+
+.mentee-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-width: 260px;
+    margin: 6px;
+    border: 1px solid var(--border-clr);
+    border-radius: 12px;
+    background-color: rgb(17, 16, 31);
+
+    
+    p {
+        padding: 2% 4%;
+    }
+
+    .round-profile {
+        align-self: center;
+        box-shadow: -1px -1px 80px rgba(129, 89, 162, 0.205), 1px 1px 80px rgb(129, 89, 162, 0.205);
+        border-radius: 50%;
+        background-color: #ffffff;
+        margin: 1em;
+    }
+
+    #mentee-details{
+        width: 74%;
+        align-self: center;
+        margin-top: 20px;
+    }
+
+    .btn-section{
+        display: flex;
+        padding: 4% 10%;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 1.5em;
+    }
+}
+
+.mentee-card .btn-section button{
+    font-size: 15px;
+    padding: 2px .6em;
+    border:1px solid white;
+    border-radius: .4em;
+    background: transparent;
+    color: #fff;
+}
+
+#more-info-btn{
+    margin-bottom: 0;
+    border: none;
+    box-sizing: border-box;
+    display: flex;
+    font-weight: 400;
+    border-radius: 50%;
+    flex-grow: 0;
+    padding: 0 0;
+}
+
+.mentee-card::-webkit-scrollbar{
+    width: 0;
+}
+
+dialog{
+    min-width: 200px;
+    min-height: 200px;
+    margin: 40vh auto;
+    background-color: #212121;
+    color: white;
+    border: 1px solid;
+    border-radius: 8px;
+    padding: 2% 5%;
+    /* border: 1px solid rgb(129, 89, 162);
+    box-shadow: -2px -2px 10px rgb(129, 89, 162), 2px 2px 10px rgb(129, 89, 162); */
+    
+    button{
+        background: transparent;
+        color: #fff;
+        padding: .2em 4%;
+        position: absolute;
+        right: 10%;
+        bottom: 6%;
+    }
+}
+
+dialog::backdrop {
+    background-color: #0000003c;
+}
+
+@media (max-width: 420px) {
+    
+    .mentee-card{
+        width: 98%;
+    }
+}

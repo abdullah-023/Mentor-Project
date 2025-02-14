@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new mentee</title>
+    <link rel="stylesheet" href="mentee_form.css">
+</head>
+
+<body>
+    <div id="main">
+        <Form id="mentee-form">
+            <label for="name">Name </label>
+            <input type="text" id="name" name="name" required><br>
+            <label for="branch">Branch </label>
+            <input type="text" id="branch" name="branch" required><br>
+            <label for="year-menu">Choose year </label>
+            <select id="year-menu" name="year">
+                <option value="1">First Year</option>
+                <option value="2">Second Year</option>
+                <option value="3">Third Year</option>
+                <option value="4">Fourth Year</option>
+            </select><br>
+            <label for="email">Email </label>
+            <input type="email" id="email" name="email" required><br>
+            <label for="phone">Phone </label>
+            <input type="tel" id="phone" name="phone" maxlength="10" required><br>
+            <label for="password">Password </label>
+            <input type="text" id="password" name="password" required><br>
+
+            <div class="btn-section">
+                <input id="submit-btn" type="submit" value="Submit"><br>
+            </div>
+        </Form>
+    </div>
+
+    <script>
+        const addMenteeUrl = 'https://mentor-mentee-gold.vercel.app/mentor/addNewMentee';
+        const submitBtn = document.getElementById("submit-btn");
+        const form = document.getElementById("mentee-form");
+
+        submitBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            const newMenteeDetails = new FormData(form);
+            jsonData = {};
+            newMenteeDetails.forEach((value, key) => {
+                jsonData[key] = value;
+            });
+
+            // jsonData.year = `${jsonData.year}`;
+            console.log(jsonData)
+
+            fetch(addMenteeUrl, {
+                method: "POST",
+                headers: { "Content-Type": "application/json",
+                            "Authorization" : `Bearer ${JSON.parse(localStorage.getItem("mentorObject")).token}`
+                 },
+                body: JSON.stringify(jsonData)
+            })
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error("Cannot add this mentee!, server error");
+                    }
+                    console.log("New mentee added successfully.")
+                    return response.json();
+                })
+                .then((result) => {
+                    console.log(result);
+                    window.location.href = "mentor.html"
+                })
+                .catch((error) => {
+                    console.log("Some error occured!", error);
+                })
+
+
+        })
+    </script>
+</body>
+
+</html>

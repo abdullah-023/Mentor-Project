@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+    /* border: 1px solid greenyellow; */
+}
+
+body {
+    background-color: #212121;
+    display: flex;
+    min-height: 98vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#main {
+    display: flex;
+    min-width: min(100%, 420px);
+    border: 1px solid #c4c4c4;
+    border-radius: 12px;
+
+    .btn-section {
+        display: flex;
+        width: 80%;
+        justify-content: flex-end;
+    }
+}
+
+#mentee-form {
+    padding: 8% 0 4% 13%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 8px;
+
+    #submit-btn {
+        background: transparent;
+        border: 1px solid #fff;
+        color: #fff;
+        border-radius: 4px;
+        width: 102px;
+    }
+
+    label {
+        width: max-content;
+        color: white;
+    }
+
+    label::after {
+        content: '*';
+        color: rgb(125, 78, 253);
+    }
+}
+
+option {
+    color: #212121;
+    background-color: #c4c4c4;
+    border-radius: 8px;
+    padding: 6px 8px;
+    height: 2.4rem;
+}
+
+input, #year-menu{
+    margin: 6px 0px;
+    width: 80%;
+    height: 2.4rem;
+    color: #fff;
+    border: 1px solid #fff;
+    background: transparent;
+    border-radius: 4px;
+    padding: 6px 8px;
+}
+
+input:focus {
+    border: 1px solid slateblue;
+    background-color: #515151;
+    color: white;
+    outline: none;
+}

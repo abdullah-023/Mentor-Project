@@ -1,0 +1,239 @@
+:root {
+    --main-clr: #11121a;
+    --border-clr: #42434a;
+    --text-clr: #e6e6ef;
+    --accent-clr: #5e63ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px dotted red; */
+}
+
+body {
+    background-color: var(--main-clr);
+    color: var(--text-clr);
+    height: 96vh;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    height: inherit;
+    width: 100%;
+    max-width: 840px;
+    padding: min(2%, 10px) min(4%, 20px);
+    display: flex;
+    flex-direction: column;
+}
+
+#mentee-section {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: inherit;
+    margin-bottom: 10%;
+    border: 1px solid var(--border-clr);
+    border-radius: 12px;
+
+}
+
+.mentee-action {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1rem;
+    align-items: end;
+    width: 100%;
+    padding: 8px;
+    border-bottom: 1px solid var(--border-clr);
+}
+
+.btn-container {
+    display: flex;
+    flex: 1;
+    column-gap: 8px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 7px 4px;
+    height: max(2.8em, 4.2vw);
+
+    button {
+        text-wrap: nowrap;
+        background: transparent;
+        border: 1px solid var(--border-clr);
+        border-radius: 8px;
+        padding: min(10px, 20px) 1vh;
+        width: fit-content;
+        height: fit-content;
+        color: #fff;
+    }
+}
+
+.msg-container {
+    position: relative;
+    display: flex;
+    flex: 1;
+    min-width: 240px;
+    margin-top: 6px;
+    padding: 0 5px 4px;
+}
+
+.msg-input {
+    flex-grow: 1;
+    background: transparent;
+    border: 1px groove var(--border-clr);
+    border-radius: 8px;
+    outline: none;
+    padding: 10px max(33px, 10%) 0px 4%;
+    font-size: 1.3em;
+    line-height: 1.4em;
+    width: 100%;
+    height: 2.8em;
+    cursor: pointer;
+}
+
+.msg-input::placeholder {
+    font-size: 1em;
+    padding: 3px 8px;
+}
+
+.msg-input:focus {
+    background-color: var(--border-clr);
+    color: #fff;
+    border: 1px solid var(--accent-clr);
+    cursor: text;
+
+
+}
+
+.msg-input::-webkit-scrollbar {
+    width: 0;
+}
+
+.msg-container #send-btn {
+    position: absolute;
+    right: 5%;
+    bottom: 15%;
+
+}
+
+svg {
+    scale: 1.15;
+    fill: var(--accent-clr);
+}
+
+#history {
+    width: 100%;
+    padding: 1em 1%;
+
+    ol {
+        margin-left: 1.6em;
+
+    }
+
+    li {
+        margin-top: 8px;
+    }
+}
+
+/*       <<< display mentor section >>>        */
+
+.mentor-info {
+    margin-top: 2px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1%;
+    background-color: var(--main-clr);
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgb(0, 0, 0);
+
+}
+
+#mentee-details {
+    margin-left: 6%;
+    width: 80%;
+}
+
+.mentor-picture {
+    /* background: linear-gradient(120deg, rgb(35, 105, 162) 10%,rgb(144, 81, 192) 90%); */
+    width: 140px;
+    height: 150px;
+    background-image: url("../media/mentor.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #5e63ff;
+    border: 1px solid #fff;
+    border-radius: 8px;
+}
+
+dialog {
+    align-items: center;
+    margin: 30vh auto;
+    background-color: var(--main-clr);
+    color: white;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    padding: 40px 20px;
+
+    #doubt-form{
+        display: flex-box;
+        padding-left: 10%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .msg-input{
+        margin-top: 4px;
+        width: 90%;
+        height: 4.1em;
+    }
+
+    .btn-section {
+        display: flex;
+        flex: 1;
+        margin-top: 10%;
+        justify-content: center;
+        align-items: center;
+        column-gap: 6px;
+        padding: 0 7px 4px;
+        height: max(2.8em, 4.2vw);
+
+        button{
+            background: transparent;
+            border: 1px solid var(--border-clr);
+            border-radius: 8px;
+            padding: 6px 12px;
+            height: fit-content;
+            color: #fff;
+        }
+    }
+
+    input {
+        margin: 6px 2px;
+        margin-bottom: 12px;
+        height: 2.6em;
+        color: #fff;
+        border: 1px solid var(--border-clr);
+        background: transparent;
+        border-radius: 6px;
+        padding: 6px 8px;
+    }
+
+    input:focus {
+        border: 1px solid slateblue;
+        background-color: #515151;
+        color: white;
+        outline: none;
+    }
+}
+
+dialog::backdrop {
+    background-color: #0000003c;
+}

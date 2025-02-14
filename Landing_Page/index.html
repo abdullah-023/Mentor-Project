@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <h3 id="landing-text">Please Select Your Role</h3>
+        <div class="btns">
+            <button id="btn1" onclick="openPage(this)">
+                <img src="../media/mentor.png" width="48" alt="profile"> I'm a mentor
+            </button>
+            <button id="btn2" onclick="openPage(this)">
+                <img src="../media/mentee.png" width="48" alt="profile">Mentee Login
+            </button>
+
+        </div>
+    </div>
+
+    <dialog id="mentor-login-dialog">
+        <div class="input-section">
+            <input id="form-userid" type="email" placeholder="Email" required><br>
+            <input id="form-password" type="password" placeholder="Password" required> <br>
+            
+            <div class="btn-section">
+                <button class="dialog-close-btn">Close</button>
+                <button id="login-btn">Login</button>
+            </div>
+
+        </div>
+        <p>Not have an Account? <br><a href="/form.html">Create One</a></p>
+    </dialog>
+
+    <dialog id="mentee-login-dialog">
+        <div class="input-section">
+            <input id="mentee-userid" type="email" placeholder="Email" required><br>
+            <input id="mentee-password" type="password" placeholder="Password" required> <br>
+    
+            <div class="btn-section">
+                <button class="dialog-close-btn">Close</button>
+                <button id="mentee-login-btn">Login</button>
+            </div>
+    
+        </div>
+    </dialog>
+
+    <script src="script.js" defer></script>
+    
+</body>
+
+</html>

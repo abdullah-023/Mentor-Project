@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor-Dashboard</title>
+    <link rel="stylesheet" href="mentor.css">
+</head>
+<body>
+    
+    <div class="mentor-info">
+        <div class="mentor-picture">
+        </div>
+        
+        <div id="mentor-details">
+            <p>Name</p>
+            <p>Designation</p>
+            <p>Department</p>
+            <p>Experience</p>
+            <p>Mentoring</p>
+        </div>
+
+        <div id="btns">
+            <button id="add-new-btn">Add</button>
+        </div>
+    </div>
+
+    <div id="mentee-list">No Mentee Added!</div>
+
+    <dialog id="mentee-dialog">
+        <div id="text-area"></div>
+        <button id="dialog-close-btn">Close</button>
+    </dialog>
+
+    <script src="server.js" defer></script>
+</body>
+</html>
